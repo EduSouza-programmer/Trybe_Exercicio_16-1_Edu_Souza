@@ -66,7 +66,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#12"> :pushpin: 12.</a> Redux: Remove an Item from an Array;</p>
 
-- <p><a href="#13"> :pushpin: 13.</a> ;</p>
+- <p><a href="#13"> :pushpin: 13.</a> Redux: Copy an Object with Object.assign;</p>
 
 ## :books: Exercícios
 
@@ -629,7 +629,7 @@ const store = Redux.createStore(immutableReducer);
 
 ### 13°
 
-[]()
+[Redux: Copy an Object with Object.assign](https://www.freecodecamp.org/learn/front-end-libraries/redux/copy-an-object-with-object-assign)
 
 #### Resposta:
 
@@ -637,7 +637,33 @@ const store = Redux.createStore(immutableReducer);
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const defaultState = {
+  user: "CamperBot",
+  status: "offline",
+  friends: "732,982",
+  community: "freeCodeCamp",
+};
 
+const immutableReducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case "ONLINE":
+      return Object.assign({}, state, { status: "online" });
+
+    // podemos usar assim também
+    // {...state, status:'online' }
+
+    default:
+      return state;
+  }
+};
+
+const wakeUp = () => {
+  return {
+    type: "ONLINE",
+  };
+};
+
+const store = Redux.createStore(immutableReducer);
 ```
 
 </details>
