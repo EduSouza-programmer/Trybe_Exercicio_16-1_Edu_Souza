@@ -37,16 +37,15 @@
 Hoje vamos aprender sobre uma biblioteca que possui ampla adoção entre as pessoas que desenvolvem em React . Essa biblioteca é o Redux . Ela é utilizada para ajudar no gerenciamento de estado. Vamos entender um pouco mais sobre o que é, como nasceu e como funciona o Redux.
 Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo de consolidar seus conhecimentos acerca dos conceitos presentes no Redux.
 
-
 # :postbox: Entrega
 
 ### :clipboard: Sumário
 
-- <p><a href="#1"> :pushpin: 1.</a> action creator Definindo um;</p>
+- <p><a href="#1"> :pushpin: 1.</a> Redux: Define an Action Creator;</p>
 
-- <p><a href="#2"> :pushpin: 2.</a> ;</p>
+- <p><a href="#2"> :pushpin: 2.</a> Redux: Dispatch an Action Event;</p>
 
-- <p><a href="#3"> :pushpin: 3.</a> ;</p>
+- <p><a href="#3"> :pushpin: 3.</a> Redux: Handle an Action in the Store;</p>
 
 - <p><a href="#4"> :pushpin: 4.</a> ;</p>
 
@@ -72,7 +71,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 ### 1°
 
-[action creator Definindo um](https://www.freecodecamp.org/learn/front-end-libraries/redux/define-an-action-creator)
+[Redux: Define an Action Creator](https://www.freecodecamp.org/learn/front-end-libraries/redux/define-an-action-creator)
 
 #### Resposta:
 
@@ -81,11 +80,11 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 ```js
 const action = {
-  type: 'LOGIN'
-}
+  type: "LOGIN",
+};
 // Define an action creator here:
 
-const actionCreator= ()=> Redux.action(action);
+const actionCreator = () => action;
 ```
 
 </details>
@@ -100,6 +99,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 2°
 
+[ Redux: Dispatch an Action Event](https://www.freecodecamp.org/learn/front-end-libraries/redux/dispatch-an-action-event)
 
 #### Resposta:
 
@@ -107,7 +107,16 @@ const actionCreator= ()=> Redux.action(action);
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const store = Redux.createStore((state = { login: false }) => state);
 
+const loginAction = () => {
+  return {
+    type: "LOGIN",
+  };
+};
+
+// Dispatch the action here:
+store.dispatch(loginAction());
 ```
 
 </details>
@@ -122,6 +131,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 3°
 
+[Redux: Handle an Action in the Store](https://www.freecodecamp.org/learn/front-end-libraries/redux/handle-an-action-in-the-store)
 
 #### Resposta:
 
@@ -129,7 +139,24 @@ const actionCreator= ()=> Redux.action(action);
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const defaultState = {
+  login: false,
+};
 
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+  return action.type === "LOGIN" ? { login: true } : state;
+
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: "LOGIN",
+  };
+};
 ```
 
 </details>
@@ -144,6 +171,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 4°
 
+[]()
 
 #### Resposta:
 
@@ -166,6 +194,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 5°
 
+[]()
 
 #### Resposta:
 
@@ -188,6 +217,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 6°
 
+[]()
 
 #### Resposta:
 
@@ -210,6 +240,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 7°
 
+[]()
 
 #### Resposta:
 
@@ -232,6 +263,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 8°
 
+[]()
 
 #### Resposta:
 
@@ -254,6 +286,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 9°
 
+[]()
 
 #### Resposta:
 
@@ -276,6 +309,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 10°
 
+[]()
 
 #### Resposta:
 
@@ -298,6 +332,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 11°
 
+[]()
 
 #### Resposta:
 
@@ -320,6 +355,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 12°
 
+[]()
 
 #### Resposta:
 
@@ -342,6 +378,7 @@ const actionCreator= ()=> Redux.action(action);
 
 ### 13°
 
+[]()
 
 #### Resposta:
 
@@ -361,7 +398,6 @@ const actionCreator= ()=> Redux.action(action);
 </p>
 
 #
-
 
 ## :unlock: Licença
 
