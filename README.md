@@ -56,7 +56,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#7"> :pushpin: 7.</a> Redux: Combine Multiple Reducers;</p>
 
-- <p><a href="#8"> :pushpin: 8.</a> ;</p>
+- <p><a href="#8"> :pushpin: 8.</a> Redux: Send Action Data to the Store;</p>
 
 - <p><a href="#9"> :pushpin: 9.</a> ;</p>
 
@@ -400,7 +400,7 @@ const store = Redux.createStore(rootReducer);
 
 ### 8°
 
-[]()
+[Redux: Send Action Data to the Store](https://www.freecodecamp.org/learn/front-end-libraries/redux/send-action-data-to-the-store)
 
 #### Resposta:
 
@@ -408,7 +408,33 @@ const store = Redux.createStore(rootReducer);
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const ADD_NOTE = "ADD_NOTE";
 
+const notesReducer = (state = "Initial State", action) => {
+  switch (action.type) {
+    // Change code below this line
+    case "ADD_NOTE":
+      return action.text;
+    // Change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // Change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note,
+  };
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText("Hello!"));
+console.log(store.getState());
 ```
 
 </details>
