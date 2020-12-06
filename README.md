@@ -54,7 +54,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#6"> :pushpin: 6.</a> Redux: Register a Store Listener;</p>
 
-- <p><a href="#7"> :pushpin: 7.</a> ;</p>
+- <p><a href="#7"> :pushpin: 7.</a> Redux: Combine Multiple Reducers;</p>
 
 - <p><a href="#8"> :pushpin: 8.</a> ;</p>
 
@@ -340,7 +340,7 @@ console.log(count);
 
 ### 7°
 
-[]()
+[Redux: Combine Multiple Reducers](https://www.freecodecamp.org/learn/front-end-libraries/redux/combine-multiple-reducers)
 
 #### Resposta:
 
@@ -348,7 +348,44 @@ console.log(count);
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const INCREMENT = "INCREMENT";
+const DECREMENT = "DECREMENT";
 
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
+
+const authReducer = (state = { authenticated: false }, action) => {
+  switch (action.type) {
+    case LOGIN:
+      return {
+        authenticated: true,
+      };
+    case LOGOUT:
+      return {
+        authenticated: false,
+      };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = Redux.combineReducers({
+  count: counterReducer,
+  auth: authReducer,
+});
+
+const store = Redux.createStore(rootReducer);
 ```
 
 </details>
