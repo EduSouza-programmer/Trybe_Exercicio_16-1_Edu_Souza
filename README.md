@@ -62,9 +62,9 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#10"> :pushpin: 10.</a> Redux: Never Mutate State;</p>
 
-- <p><a href="#11"> :pushpin: 11.</a> ;</p>
+- <p><a href="#11"> :pushpin: 11.</a> Redux: Use the Spread Operator on Arrays;</p>
 
-- <p><a href="#12"> :pushpin: 12.</a> ;</p>
+- <p><a href="#12"> :pushpin: 12.</a> Redux: Remove an Item from an Array;</p>
 
 - <p><a href="#13"> :pushpin: 13.</a> ;</p>
 
@@ -550,7 +550,7 @@ console.log(store.getState());
 
 ### 11°
 
-[]()
+[Redux: Use the Spread Operator on Arrays](https://www.freecodecamp.org/learn/front-end-libraries/redux/use-the-spread-operator-on-arrays)
 
 #### Resposta:
 
@@ -558,7 +558,24 @@ console.log(store.getState());
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const immutableReducer = (state = ["Do not mutate state!"], action) => {
+  switch (action.type) {
+    case "ADD_TO_DO":
+      return [...state, action.todo];
+      return;
+    default:
+      return state;
+  }
+};
 
+const addToDo = (todo) => {
+  return {
+    type: "ADD_TO_DO",
+    todo,
+  };
+};
+
+const store = Redux.createStore(immutableReducer);
 ```
 
 </details>
@@ -573,7 +590,7 @@ console.log(store.getState());
 
 ### 12°
 
-[]()
+[Redux: Remove an Item from an Array](https://www.freecodecamp.org/learn/front-end-libraries/redux/remove-an-item-from-an-array)
 
 #### Resposta:
 
@@ -581,7 +598,23 @@ console.log(store.getState());
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const immutableReducer = (state = [0, 1, 2, 3, 4, 5], action) => {
+  switch (action.type) {
+    case "REMOVE_ITEM":
+      return state.filter((_, i) => i !== action.index);
+    default:
+      return state;
+  }
+};
 
+const removeItem = (index) => {
+  return {
+    type: "REMOVE_ITEM",
+    index,
+  };
+};
+
+const store = Redux.createStore(immutableReducer);
 ```
 
 </details>
