@@ -35,9 +35,10 @@
 # :rocket: Sobre o Exercício
 
 Hoje vamos aprender sobre uma biblioteca que possui ampla adoção entre as pessoas que desenvolvem em React . Essa biblioteca é o Redux . Ela é utilizada para ajudar no gerenciamento de estado. Vamos entender um pouco mais sobre o que é, como nasceu e como funciona o Redux.
-Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo de consolidar seus conhecimentos acerca dos conceitos presentes no Redux.
 
 # :postbox: Entrega
+
+Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo de consolidar seus conhecimentos acerca dos conceitos presentes no Redux.
 
 ### :clipboard: Sumário
 
