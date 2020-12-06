@@ -49,7 +49,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#4"> :pushpin: 4.</a> Redux: Use a Switch Statement to Handle Multiple Actions;</p>
 
-- <p><a href="#5"> :pushpin: 5.</a> ;</p>
+- <p><a href="#5"> :pushpin: 5.</a> Redux: Use const for Action Types;</p>
 
 - <p><a href="#6"> :pushpin: 6.</a> ;</p>
 
@@ -229,7 +229,7 @@ const logoutUser = () => {
 
 ### 5°
 
-[]()
+[Redux: Use const for Action Types](https://www.freecodecamp.org/learn/front-end-libraries/redux/use-const-for-action-types)
 
 #### Resposta:
 
@@ -237,7 +237,45 @@ const logoutUser = () => {
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+// Change code below this line
+const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
+// Change code above this line
 
+const defaultState = {
+  authenticated: false,
+};
+
+const authReducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return {
+        authenticated: true,
+      };
+
+    case "LOGOUT":
+      return {
+        authenticated: false,
+      };
+
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: LOGIN,
+  };
+};
+
+const logoutUser = () => {
+  return {
+    type: LOGOUT,
+  };
+};
 ```
 
 </details>
