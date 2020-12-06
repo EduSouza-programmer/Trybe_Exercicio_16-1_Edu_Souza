@@ -80,7 +80,12 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const action = {
+  type: 'LOGIN'
+}
+// Define an action creator here:
 
+const actionCreator= ()=> Redux.action(action);
 ```
 
 </details>
