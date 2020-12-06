@@ -51,7 +51,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#5"> :pushpin: 5.</a> Redux: Use const for Action Types;</p>
 
-- <p><a href="#6"> :pushpin: 6.</a> ;</p>
+- <p><a href="#6"> :pushpin: 6.</a> Redux: Register a Store Listener;</p>
 
 - <p><a href="#7"> :pushpin: 7.</a> ;</p>
 
@@ -290,7 +290,7 @@ const logoutUser = () => {
 
 ### 6°
 
-[]()
+[Redux: Register a Store Listener](https://www.freecodecamp.org/learn/front-end-libraries/redux/register-a-store-listener)
 
 #### Resposta:
 
@@ -298,7 +298,33 @@ const logoutUser = () => {
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const ADD = "ADD";
 
+const reducer = (state = 0, action) => {
+  switch (action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+
+// Global count variable:
+let count = 0;
+
+// Change code below this line
+const addCount = () => (count += 1);
+store.subscribe(addCount);
+// Change code above this line
+
+store.dispatch({ type: ADD });
+console.log(count);
+store.dispatch({ type: ADD });
+console.log(count);
+store.dispatch({ type: ADD });
+console.log(count);
 ```
 
 </details>
