@@ -58,7 +58,7 @@ Você irá fazer 14 exercícios propostos pelo site freecodecamp , com objetivo 
 
 - <p><a href="#8"> :pushpin: 8.</a> Redux: Send Action Data to the Store;</p>
 
-- <p><a href="#9"> :pushpin: 9.</a> ;</p>
+- <p><a href="#9"> :pushpin: 9.</a> Redux: Write a Counter with Redux;</p>
 
 - <p><a href="#10"> :pushpin: 10.</a> ;</p>
 
@@ -449,7 +449,7 @@ console.log(store.getState());
 
 ### 9°
 
-[]()
+[Redux: Write a Counter with Redux](https://www.freecodecamp.org/learn/front-end-libraries/redux/write-a-counter-with-redux)
 
 #### Resposta:
 
@@ -457,7 +457,37 @@ console.log(store.getState());
  <summary> :pencil2: Código Javascript</summary>
 
 ```js
+const INCREMENT = "INCREMENT"; // Define a constant for increment action types
+const DECREMENT = "DECREMENT"; // Define a constant for decrement action types
 
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const incAction = () => {
+  return {
+    type: INCREMENT,
+  };
+};
+
+const decAction = () => {
+  return {
+    type: DECREMENT,
+  };
+};
+
+const store = Redux.createStore(counterReducer);
+
+console.log(store.getState());
+store.dispatch(incAction());
+console.log(store.getState());
 ```
 
 </details>
