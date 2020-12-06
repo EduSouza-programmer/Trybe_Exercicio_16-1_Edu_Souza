@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Exercício 16-1: JS_ES6 - Intro ao Redux : O estado global da aplicação - Concluído o/ o/ o/ :star:
+  Exercício 16-1: Intro ao Redux - O estado global da aplicação - Concluído o/ o/ o/ :star:
 </h3>
 
 <blockquote align="center">“Quanto mais você estuda, mais aprende e se aproxima de realizar seu sonhos!”</blockquote>
